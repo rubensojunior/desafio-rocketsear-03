@@ -1,0 +1,11 @@
+{
+  "name": "rocketseat-desafio-03",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/rubensojunior/desafio-rocketseat-03.git",
+  "author": "rubensojunior <jroliveirati@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
