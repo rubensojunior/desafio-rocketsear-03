@@ -1,5 +1,5 @@
 import { Router } from 'express'
 
-const routes =  newRouter()
+const routes =  new Router()
 
 export default routes
