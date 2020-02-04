@@ -40,8 +40,7 @@ $ yarn
 
 # Starting backend
 $ cd backend && yarn dev
-
-----
+```
 
 ## ✍️ Autor <a name = "authors"></a>
 
