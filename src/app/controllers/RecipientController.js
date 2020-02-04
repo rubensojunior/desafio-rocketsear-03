@@ -3,6 +3,9 @@ import Recipient from '../models/Recipient'
 
 class RecipientController {
   async store(req, res) {
+    /*
+     * type validations
+     */
     const schema = Yup.object().shape({
       name: Yup.string().required(),
       street: Yup.string().required(),
@@ -17,6 +20,10 @@ class RecipientController {
     if (!(await schema.isValid(req.body))) {
       return res.status(400).json({ error: 'Validação falhou' })
     }
+
+    /*
+     * create
+     */
 
     const {
       id,
@@ -44,6 +51,9 @@ class RecipientController {
   }
 
   async update(req, res) {
+    /*
+     * type validations
+     */
     const schema = Yup.object().shape({
       name: Yup.string(),
       street: Yup.string(),
@@ -59,11 +69,19 @@ class RecipientController {
       return res.status(400).json({ error: 'Validação falhou' })
     }
 
+    /*
+     * validate if recipient exists
+     */
+
     const recipient = await Recipient.findByPk(req.params.id)
 
     if (!recipient) {
       return res.status(400).json({ error: 'Destinatário não encontrado' })
     }
+
+    /*
+     * update
+     */
 
     const {
       name,
