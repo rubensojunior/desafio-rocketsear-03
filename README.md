@@ -33,7 +33,7 @@ To clone and run this application, you'll need [Git](https://git-scm.com), [Node
 $ git clone https://github.com/rubensojunior/desafio-rocketseat-03.git
 
 # Go into the repository
-$ cd fastfeet
+$ cd desafio-rocketseat-03
 
 # Install dependencies
 $ yarn
