@@ -51,5 +51,9 @@ routes.delete('/deliveries/:id', DeliveryController.delete)
 
 routes.get('/deliveries/problems', DeliveryWithProblemController.index)
 routes.get('/deliveries/:id/problems', ProblemInDeliveryController.index)
+routes.delete(
+  '/problem/:id/cancel-delivery',
+  ProblemInDeliveryController.delete
+)
 
 export default routes

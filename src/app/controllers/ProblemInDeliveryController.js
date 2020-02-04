@@ -1,10 +1,9 @@
-import { Op } from 'sequelize'
 import * as Yup from 'yup'
 import Delivery from '../models/Delivery'
-import DeliveryProblem from '../models/DeliveryProblem'
-import File from '../models/File'
-import Recipient from '../models/Recipient'
 import Deliveryman from '../models/Deliveryman'
+import DeliveryProblem from '../models/DeliveryProblem'
+
+import Mail from '../../lib/Mail'
 
 class ProblemInDelivery {
   async index(req, res) {
@@ -76,6 +75,36 @@ class ProblemInDelivery {
     })
 
     return res.json({ id, description, delivery_id })
+  }
+
+  async delete(req, res) {
+    const problem = await DeliveryProblem.findByPk(req.params.id)
+
+    if (!problem) {
+      return res.status(400).json({ error: 'Problema não encontrada' })
+    }
+
+    const delivery = await Delivery.findByPk(problem.delivery_id, {
+      include: [
+        {
+          model: Deliveryman,
+          as: 'deliveryman',
+          attributes: ['name', 'email'],
+        },
+      ],
+    })
+
+    delivery.canceled_at = new Date()
+
+    await delivery.save()
+
+    await Mail.sendMail({
+      to: `${delivery.deliveryman.name} <${delivery.deliveryman.email}>`,
+      subject: 'Entregada cancelada',
+      text: 'Um cancelamento pelo qual você é o entregador foi realizado',
+    })
+
+    return res.json(delivery)
   }
 }
 
