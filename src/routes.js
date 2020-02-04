@@ -11,6 +11,7 @@ import DeliveryController from './app/controllers/DeliveryController'
 import DeliveryActionController from './app/controllers/DeliveryActionController'
 import DeliveredController from './app/controllers/DeliveredController'
 import DeliveryWithProblemController from './app/controllers/DeliveryWithProblemController'
+import ProblemInDeliveryController from './app/controllers/ProblemInDeliveryController'
 
 import authMiddleware from './app/middlewares/auth'
 
@@ -27,6 +28,7 @@ routes.put(
   '/deliveryman/:iddm/deliveries/:iddl',
   DeliveryActionController.update
 )
+routes.post('/deliveries/:id/problems', ProblemInDeliveryController.store)
 
 routes.use(authMiddleware)
 
@@ -48,5 +50,6 @@ routes.put('/deliveries/:id', DeliveryController.update)
 routes.delete('/deliveries/:id', DeliveryController.delete)
 
 routes.get('/deliveries/problems', DeliveryWithProblemController.index)
+routes.get('/deliveries/:id/problems', ProblemInDeliveryController.index)
 
 export default routes
