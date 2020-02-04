@@ -1,10 +1,14 @@
-<h2 align='center'> 
-  <img 
-    src="./.git-assets/logo.png" 
-    alt="FastFeet"
-    width="300"
-  >
-</h2>
+<h1 align="center">
+  <img alt="Fastfeet" title="Fastfeet" src=".github/logo.png" width="300px" />
+</h1>
+
+<h3 align="center">
+  Desafio 3: FastFeet, continuando a aplicação
+</h3>
+
+<h3 align="center">
+  :warning: Etapa 2/4 do Desafio Final :warning:
+</h3>
 
 ----
 
