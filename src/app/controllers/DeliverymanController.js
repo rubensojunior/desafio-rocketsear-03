@@ -56,7 +56,7 @@ class DeliverymanController {
 
     const { email } = req.body
 
-    const deliveryman = await Deliveryman.findByPk(req.userId)
+    const deliveryman = await Deliveryman.findByPk(req.params.id)
 
     if (email && email !== deliveryman.email) {
       const deliverymanExists = await Deliveryman.findOne({ where: { email } })
