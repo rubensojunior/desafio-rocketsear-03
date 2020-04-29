@@ -1,66 +1,29 @@
+<img alt="GoStack" src="https://storage.googleapis.com/golden-wind/bootcamp-gostack/header-desafios.png" />
+
 <h1 align="center">
-  <img alt="Fastfeet" title="Fastfeet" src="https://github.com/Rocketseat/bootcamp-gostack-desafio-02/blob/master/.github/logo.png" width="300px" />
+<br>
+Rocketseat - GoStack 10 - Challenge 03
 </h1>
 
-<h3 align="center">
-  Desafio 3: FastFeet, continuando...
-</h3>
+<p align="center">
+This project was created to solve a challenge requested by Rocketseat. 
+Gostack is immersive training in technologies, react and react natively.</p>
 
-<h3 align="center">
-  :warning: Etapa 2/4 do Desafio Final :warning:
-</h3>
+<p align="center">
+  <a href="https://opensource.org/licenses/MIT">
+    <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License MIT">
+  </a>
+</p>
 
-<p>Esse desafio faz parte do Desafio Final, que é uma aplicação completa (Back-end, Front-end e Mobile) que é avaliada para emissão do Certificado do Bootcamp GoStack!</p>
+<hr />
 
-## :rocket: Sobre o desafio
+## Features
 
-A aplicação que iremos dar início ao desenvolvimento a partir de agora é um app para uma transportadora fictícia, o FastFeet.
+- Features can be accessed by routes below.
 
+- 💹 **Node Js** — A web framework for Node Js
 
-### **Um pouco sobre as ferramentas**
-
-- Express;
-- Sucrase + Nodemon;
-- ESLint + Prettier + EditorConfig;
-- Sequelize (Utilizando PostgreSQL);
-- jsonwebtoken + bcryptjs;
-- Yup;
-- Multer;
-- date-fns;
-- nodemailer + nodemailer-express-handlebars;
-
-
-### **Database**
-
-Está API está utilizando PostgreSQL para fazer o relacionamento entre as encomendas, entregadores e destinatários. Temos também a de usuários admin da distribuidora e uma tabela para criação de logs de problemas que os entregadores podem encontrar em seu trabalho.
-
-
-### **Inicializar API**
-
-- yarn dev
-- yarn dev:debug (verificar pasta .vscode para configurações)
-
-
-### **Email**
-
-Nesta aplicação é utilizado o envio de email para a comunicação com os entregadores. Quando uma encomenda tem seu estado alterado para “cancelado” o entregador vinculado a aquela entrega, recebe um email de notificação, o que também é feito quando uma nova entrega é atribuída a um entregador.
-
-
-### **Autenticação**
-
-A autenticação foi realizada com o uso de jsonwebtoken (JWT). Esse processo tem início quando um usuário admin do sistema abre uma seção por meio da rota Session, após a validação de seus dados cadastrais o mesmo recebe da API um token com seu id.
-
-Agora este usuário só tem de vincular esse token a suas próximas requisição por meio do protocolo Bearer. Neste sistema todas a ações a partir da abertura da seção irá pedir uma validação por meio do token.
-
-
-### **Validação dos dados**
-
-Nesta aplicação todas as requisições passam por processo de verificação de seu dados. Este procedimento é realizado por meio de lib Yup e verificações condizentes com as regras de negócios, por exemplo existência unica de um email.
-
-
-### **Rotas**
-
-Abaixo estão descritas as rotas do sistema.
+### **Routes**
 
   #### - Users (/users)
 
@@ -129,10 +92,21 @@ Abaixo estão descritas as rotas do sistema.
 | :---:      | :---:  |    :---:      |    :---: |
 | /files   | POST  | {file} | JWT |
 
-## :memo: Licença
 
-Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
+## Getting started
+
+- Clone project > enter the project folder
+- run `yarn`
+- run `docker run --name dbimage -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres`
+- Acess postbird or another postgres manager and create db with any name. 
+- Configure db credentials in src > config > database.js
+- run `yarn sequelize db:migrate`
+- run `yarn dev`
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](https://opensource.org/licenses/MIT) page for details.
 
 ---
 
-Proposto com ♥ by Rocketseat :wave: [Entre na nossa comunidade!](https://discordapp.com/invite/gCRAFhc)
+Created with passion by me 👨🏻‍💻
