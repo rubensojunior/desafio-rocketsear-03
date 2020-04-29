@@ -99,7 +99,7 @@ Gostack is immersive training in technologies, react and react natively.</p>
 - run `yarn`
 - run `docker run --name dbimage -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres`
 - Acess postbird or another postgres manager and create db with any name. 
-- Configure db credentials in src > config > database.js
+- Configure db credentials in src > config > database.js.
 - run `yarn sequelize db:migrate`
 - run `yarn dev`
 
